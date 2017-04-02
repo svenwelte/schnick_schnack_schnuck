@@ -2,7 +2,7 @@ package de.svenwelte.kata;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-public class MenschlicherSpieler {
+public class MenschlicherSpieler implements Spieler {
 
     private final Symbol symbol;
 
@@ -11,7 +11,7 @@ public class MenschlicherSpieler {
         this.symbol = symbol;
     }
 
-    public Symbol schickSchnackSchnuck() {
+    public Symbol schnickSchnackSchnuck() {
         return this.symbol;
     }
 }

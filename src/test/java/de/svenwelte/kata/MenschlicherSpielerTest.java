@@ -13,10 +13,10 @@ public class MenschlicherSpielerTest {
     @Test
     public void testSchickSchnackSchnuckAlwaysReturnsInitializationValue() {
         MenschlicherSpieler spieler1 = new MenschlicherSpieler(STEIN);
-        assertThat(spieler1.schickSchnackSchnuck(), is(equalTo(STEIN)));
+        assertThat(spieler1.schnickSchnackSchnuck(), is(equalTo(STEIN)));
 
         MenschlicherSpieler spieler2 = new MenschlicherSpieler(SCHERE);
-        assertThat(spieler2.schickSchnackSchnuck(), is(equalTo(SCHERE)));
+        assertThat(spieler2.schnickSchnackSchnuck(), is(equalTo(SCHERE)));
     }
 
     @Test(expected = NullPointerException.class)
