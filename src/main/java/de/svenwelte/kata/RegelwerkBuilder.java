@@ -5,10 +5,10 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 
-class RegelwerkBuilder {
+public class RegelwerkBuilder {
     List<Regelwerk.Regel> list = new ArrayList<>();
 
-    static class RegelBuilder {
+    public static class RegelBuilder {
         private RegelwerkBuilder parent;
         private Symbol gewinnerSymbol;
         private Symbol verliererSymbol;

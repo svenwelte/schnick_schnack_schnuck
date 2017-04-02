@@ -4,7 +4,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class SpielErgebnis {
 
-    enum GewinnerSeite {
+    public enum GewinnerSeite {
         LINKS, RECHTS, KEINE;
     }
 

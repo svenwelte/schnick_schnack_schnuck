@@ -3,6 +3,7 @@ package de.svenwelte.kata;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -29,6 +30,14 @@ public class Regelwerk {
 
     List<Regel> getRegelListe() {
         return regelListe;
+    }
+
+    public List<Symbol> getErlaubteSymbole() {
+        return regelListe.stream()
+                .flatMap(r -> Arrays.asList(r.getGewinner(), r.getVerlierer()).stream())
+                .distinct()
+                .collect(Collectors.toList());
+
     }
 
     public static class Regel {

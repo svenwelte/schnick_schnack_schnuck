@@ -44,4 +44,21 @@ public class RegelwerkTest {
     }
 
 
+    @Test
+    public void testErlaubteSymboleMitLeeremRegelwerk() {
+        Regelwerk regelwerk = Regelwerk.EMPTY;
+        assertThat(regelwerk.getErlaubteSymbole(), is(empty()));
+    }
+
+    @Test
+    public void testErlaubteSymboleMitKomplexemRegelwerk() {
+        Regelwerk regelwerk = new RegelwerkBuilder()
+                .symbol(BRUNNEN).schlägt(STEIN)
+                .symbol(BRUNNEN).schlägt(SCHERE)
+                .symbol(PAPIER).schlägt(BRUNNEN)
+                .done();
+
+        assertThat(regelwerk.getErlaubteSymbole(), containsInAnyOrder(STEIN, SCHERE, PAPIER, BRUNNEN));
+        assertThat(regelwerk.getErlaubteSymbole(), hasSize(4));
+    }
 }
