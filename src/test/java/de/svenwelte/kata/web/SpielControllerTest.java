@@ -46,7 +46,7 @@ public class SpielControllerTest {
     @Test
     public void spielenShouldInvokeInteractorAndPresenterCorrectly() throws Exception {
         SpielErgebnis ergebnis = new SpielErgebnis(STEIN, STEIN, KEINE);
-        SpielResponse response = new SpielResponse(
+        SpielJsonResponse response = new SpielJsonResponse(
                 "Stein",
                 "Bein",
                 "unentschieden"
@@ -59,8 +59,8 @@ public class SpielControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.dein_symbol", is("Stein")))
                 .andExpect(jsonPath("$.gegner_symbol", is("Bein")))
-                .andExpect(jsonPath("$.ergebnis", is("unentschieden")))
-        ;
+                .andExpect(jsonPath("$.ergebnis", is("unentschieden"))
+        );
 
         verify(interactor, times(1)).spielen(STEIN);
         verify(presenter, times(1)).buildJsonResponseModel(ergebnis);

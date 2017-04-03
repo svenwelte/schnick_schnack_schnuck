@@ -1,12 +1,12 @@
 package de.svenwelte.kata;
 
-import de.svenwelte.kata.web.SpielResponse;
+import de.svenwelte.kata.web.SpielJsonResponse;
 import org.springframework.util.StringUtils;
 
 public class SpielPresenter {
 
-    public SpielResponse buildJsonResponseModel(SpielErgebnis ergebnis) {
-        return new SpielResponse(
+    public SpielJsonResponse buildJsonResponseModel(SpielErgebnis ergebnis) {
+        return new SpielJsonResponse(
                 StringUtils.capitalize(ergebnis.getLinkesSymbol().toString().toLowerCase()),
                 StringUtils.capitalize(ergebnis.getRechtesSymbol().toString().toLowerCase()),
                 buildBeschreibung(ergebnis.getGewinnerSeite())
@@ -25,6 +25,5 @@ public class SpielPresenter {
                 throw new IllegalStateException();
         }
     }
-
 
 }

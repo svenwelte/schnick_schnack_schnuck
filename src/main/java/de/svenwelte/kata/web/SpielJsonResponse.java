@@ -3,15 +3,15 @@ package de.svenwelte.kata.web;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 
-public class SpielResponse {
+public class SpielJsonResponse {
 
     private final String linkesSymbol;
-    private final String rechtsSymbol;
+    private final String rechtesSymbol;
     private final String beschreibung;
 
-    public SpielResponse(String linkesSymbol, String rechtsSymbol, String beschreibung) {
+    public SpielJsonResponse(String linkesSymbol, String rechtesSymbol, String beschreibung) {
         this.linkesSymbol = linkesSymbol;
-        this.rechtsSymbol = rechtsSymbol;
+        this.rechtesSymbol = rechtesSymbol;
         this.beschreibung = beschreibung;
     }
 
@@ -21,12 +21,13 @@ public class SpielResponse {
     }
 
     @JsonGetter("gegner_symbol")
-    public String getRechtsSymbol() {
-        return rechtsSymbol;
+    public String getRechtesSymbol() {
+        return rechtesSymbol;
     }
 
     @JsonGetter("ergebnis")
     public String getBeschreibung() {
         return beschreibung;
     }
+
 }

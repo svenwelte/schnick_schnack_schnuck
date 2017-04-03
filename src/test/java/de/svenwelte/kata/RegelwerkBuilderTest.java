@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class RegelwerkBuilderTest {
 
     @Test
-    public void testBuilder__OhneRegeln() {
+    public void testBuilderOhneRegeln() {
         Regelwerk regelwerk = new RegelwerkBuilder()
                 .done();
 
@@ -21,7 +21,7 @@ public class RegelwerkBuilderTest {
     }
 
         @Test
-    public void testBuilder__EinfacheRegeln() {
+    public void testBuilderEinfacheRegeln() {
         Regelwerk regelwerk = new RegelwerkBuilder()
                 .symbol(STEIN).schlägt(SCHERE)
                 .symbol(SCHERE).schlägt(PAPIER)

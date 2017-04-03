@@ -26,11 +26,12 @@ public class SpielController {
     }
 
     @PostMapping("/spielen")
-    public ResponseEntity<SpielResponse> spielen(Symbol symbol) {
+    public ResponseEntity<SpielJsonResponse> spielen(Symbol symbol) {
         SpielErgebnis ergebnis = interactor.spielen(symbol);
         return new ResponseEntity<>(
                 presenter.buildJsonResponseModel(ergebnis),
                 HttpStatus.OK
         );
     }
+
 }

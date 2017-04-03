@@ -1,6 +1,6 @@
 package de.svenwelte.kata;
 
-import de.svenwelte.kata.web.SpielResponse;
+import de.svenwelte.kata.web.SpielJsonResponse;
 import org.junit.Test;
 
 import static de.svenwelte.kata.SpielErgebnis.GewinnerSeite.*;
@@ -21,10 +21,10 @@ public class SpielPresenterTest {
     @Test
     public void testBuildJsonResponse() {
         SpielPresenter presenter = new SpielPresenter();
-        SpielResponse response = presenter.buildJsonResponseModel(new SpielErgebnis(Symbol.STEIN, Symbol.SCHERE, KEINE));
+        SpielJsonResponse response = presenter.buildJsonResponseModel(new SpielErgebnis(Symbol.STEIN, Symbol.SCHERE, KEINE));
 
         assertThat(response.getLinkesSymbol(), is(equalTo("Stein")));
-        assertThat(response.getRechtsSymbol(), is(equalTo("Schere")));
+        assertThat(response.getRechtesSymbol(), is(equalTo("Schere")));
         assertThat(response.getBeschreibung(), containsString("unentschieden"));
     }
 

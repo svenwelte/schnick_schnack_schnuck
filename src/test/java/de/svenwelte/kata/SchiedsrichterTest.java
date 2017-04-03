@@ -46,5 +46,4 @@ public class SchiedsrichterTest {
         assertThat(ergebnis2.getGewinnerSeite(), is(equalTo(RECHTS)));
     }
 
-
 }

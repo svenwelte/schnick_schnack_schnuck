@@ -14,4 +14,5 @@ public class MenschlicherSpieler implements Spieler {
     public Symbol schnickSchnackSchnuck() {
         return this.symbol;
     }
+
 }

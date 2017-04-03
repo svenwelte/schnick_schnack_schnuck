@@ -28,4 +28,5 @@ public class ComputerSpieler implements Spieler {
         int index = random.nextInt(symbole.size());
         return symbole.get(index);
     }
+
 }

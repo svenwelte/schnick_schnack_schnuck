@@ -19,9 +19,4 @@ public class MenschlicherSpielerTest {
         assertThat(spieler2.schnickSchnackSchnuck(), is(equalTo(SCHERE)));
     }
 
-    @Test(expected = NullPointerException.class)
-    public void testMenschlicherSpielerDoesNotAcceptNullAsSymbol() {
-        MenschlicherSpieler spieler = new MenschlicherSpieler(null);
-    }
-
 }

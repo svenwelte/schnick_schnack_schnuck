@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegelwerkBuilder {
+
     List<Regelwerk.Regel> list = new ArrayList<>();
 
     public static class RegelBuilder {
@@ -33,4 +34,5 @@ public class RegelwerkBuilder {
     public Regelwerk done() {
         return new Regelwerk(ImmutableList.copyOf(list));
     }
+
 }

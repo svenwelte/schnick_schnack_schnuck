@@ -18,7 +18,7 @@ public class Regelwerk {
 
     public Regelwerk(List<Regel> regelListe) {
         checkNotNull(regelListe);
-        this.regelListe = regelListe;
+        this.regelListe = ImmutableList.copyOf(regelListe);
     }
 
     public Set<Symbol> getUnterlegeneSymbole(Symbol symbol) {
@@ -37,7 +37,6 @@ public class Regelwerk {
                 .flatMap(r -> Arrays.asList(r.getGewinner(), r.getVerlierer()).stream())
                 .distinct()
                 .collect(Collectors.toList());
-
     }
 
     public static class Regel {
