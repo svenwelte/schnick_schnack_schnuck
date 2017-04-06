@@ -1,6 +1,7 @@
 package de.svenwelte.kata;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -24,6 +25,7 @@ public class SpielErgebnis {
         this.gewinnerSeite = gewinnerSeite;
     }
 
+    @JsonIgnore
     public GewinnerSeite getGewinnerSeite() {
         return this.gewinnerSeite;
     }

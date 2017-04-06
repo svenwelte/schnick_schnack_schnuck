@@ -1,6 +1,5 @@
 package de.svenwelte.kata;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static de.svenwelte.kata.SpielErgebnis.GewinnerSeite.*;

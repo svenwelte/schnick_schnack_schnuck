@@ -20,10 +20,12 @@ public class SpielController {
     public ResponseEntity<SpielErgebnis> spielen(Symbol symbol) {
         Schiedsrichter schiedsrichter = new Schiedsrichter(regelwerk);
 
-        Spieler linkerSpieler = new MenschlicherSpieler(symbol);
-        Spieler rechterSpieler = new ComputerSpieler(regelwerk.getErlaubteSymbole());
+        ComputerSpieler computer = new ComputerSpieler(regelwerk.getErlaubteSymbole());
 
-        SpielErgebnis ergebnis = schiedsrichter.entscheideSpiel(linkerSpieler, rechterSpieler);
+        SpielErgebnis ergebnis = schiedsrichter.entscheideSpiel(
+                symbol,
+                computer.schnickSchnackSchnuck()
+        );
 
         return new ResponseEntity<>(ergebnis, HttpStatus.OK);
     }

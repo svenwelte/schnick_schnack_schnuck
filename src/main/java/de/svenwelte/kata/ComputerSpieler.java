@@ -6,7 +6,7 @@ import java.util.Random;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-public class ComputerSpieler implements Spieler {
+public class ComputerSpieler {
 
     private List<Symbol> symbole;
     private Random random;

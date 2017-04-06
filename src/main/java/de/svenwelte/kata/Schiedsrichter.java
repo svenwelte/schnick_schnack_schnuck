@@ -19,12 +19,6 @@ public class Schiedsrichter {
         this.regelwerk = regelwerk;
     }
 
-    public SpielErgebnis entscheideSpiel(Spieler linkerSpieler, Spieler rechterSpieler) {
-        return entscheideSpiel(
-                linkerSpieler.schnickSchnackSchnuck(),
-                rechterSpieler.schnickSchnackSchnuck()
-        );
-    }
 
     public SpielErgebnis entscheideSpiel(Symbol linkesSymbol, Symbol rechtesSymbol) {
         boolean linksGewinnt = regelwerk.getUnterlegeneSymbole(linkesSymbol).contains(rechtesSymbol);
