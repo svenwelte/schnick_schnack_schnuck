@@ -1,5 +1,7 @@
 package de.svenwelte.kata;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 public class SpielErgebnis {
@@ -22,16 +24,32 @@ public class SpielErgebnis {
         this.gewinnerSeite = gewinnerSeite;
     }
 
+    public GewinnerSeite getGewinnerSeite() {
+        return this.gewinnerSeite;
+    }
+
+    @JsonGetter("dein_symbol")
     public Symbol getLinkesSymbol() {
         return linkesSymbol;
     }
 
+    @JsonGetter("gegner_symbol")
     public Symbol getRechtesSymbol() {
         return rechtesSymbol;
     }
 
-    public GewinnerSeite getGewinnerSeite() {
-        return gewinnerSeite;
+    @JsonGetter("ergebnis")
+    public String getBeschreibung() {
+        switch(this.gewinnerSeite) {
+            case KEINE:
+                return "Keiner hat gewonnen. Es ist unentschieden!";
+            case LINKS:
+                return "Du hast gewonnen! Herzlichen Glückwunsch.";
+            case RECHTS:
+                return "Leider verloren. Probier es doch noch einmal.";
+            default:
+                throw new IllegalStateException();
+        }
     }
 
 }

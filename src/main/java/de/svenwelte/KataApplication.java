@@ -3,7 +3,6 @@ package de.svenwelte;
 import de.svenwelte.kata.Regelwerk;
 import de.svenwelte.kata.RegelwerkBuilder;
 import de.svenwelte.kata.SpielInteractor;
-import de.svenwelte.kata.SpielPresenter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +21,6 @@ public class KataApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KataApplication.class, args);
 	}
-
-    @Bean
-	public SpielPresenter buildSpielPresenter() {
-	    return new SpielPresenter();
-    }
 
     @Bean
     public SpielInteractor buildSpielInteractor(@Autowired Regelwerk regelwerk) {

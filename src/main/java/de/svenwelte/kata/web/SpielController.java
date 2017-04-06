@@ -11,25 +11,17 @@ import org.springframework.web.bind.annotation.*;
 public class SpielController {
 
     private final SpielInteractor interactor;
-    private final SpielPresenter presenter;
 
     @Autowired
-    public SpielController(SpielInteractor interactor, SpielPresenter presenter) {
+    public SpielController(SpielInteractor interactor) {
         this.interactor = interactor;
-        this.presenter = presenter;
-    }
-
-    @RequestMapping("/ping")
-    @ResponseBody
-    public String ping() {
-        return "PONG";
     }
 
     @PostMapping("/spielen")
-    public ResponseEntity<SpielJsonResponse> spielen(Symbol symbol) {
+    public ResponseEntity<SpielErgebnis> spielen(Symbol symbol) {
         SpielErgebnis ergebnis = interactor.spielen(symbol);
         return new ResponseEntity<>(
-                presenter.buildJsonResponseModel(ergebnis),
+                ergebnis,
                 HttpStatus.OK
         );
     }

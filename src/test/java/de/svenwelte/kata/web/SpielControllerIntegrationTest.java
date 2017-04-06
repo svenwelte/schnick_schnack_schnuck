@@ -32,7 +32,7 @@ public class SpielControllerIntegrationTest {
 
         assertThat(responseEntity.getStatusCode(), is(HttpStatus.OK));
         assertThat(responseEntity.getBody(), containsString("dein_symbol"));
-        assertThat(responseEntity.getBody(), containsString("Stein"));
+        assertThat(responseEntity.getBody(), containsString("STEIN"));
     }
 
 }
